@@ -8,7 +8,7 @@ class UserService {
     private var users:MutableList<User> = mutableListOf(
         User(
             id = 0,
-            address = "Toru",
+            address = "Toa Payoh",
             age = 39,
             name = "Toru"
         ),
