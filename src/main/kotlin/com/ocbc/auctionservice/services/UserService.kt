@@ -5,7 +5,38 @@ import org.springframework.stereotype.Service
 
 @Service
 class UserService {
-    private var users:MutableList<User> = mutableListOf()
+    private var users:MutableList<User> = mutableListOf(
+        User(
+            id = 0,
+            address = "Toru",
+            age = 39,
+            name = "Toru"
+        ),
+        User(
+            id = 1,
+            address = "Tampines",
+            age = 35,
+            name = "Shan Feng"
+        ),
+        User(
+            id = 2,
+            address = "Bishan",
+            age = 20,
+            name = "Alex"
+        ),
+        User(
+            id = 3,
+            address = "Raffles Place",
+            age = 40,
+            name = "Alicia"
+        ),
+        User(
+            id = 4,
+            address = "River Valley",
+            age = 13,
+            name = "Morgan"
+        )
+    )
 
     fun getUsers() = users
 

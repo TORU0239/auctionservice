@@ -3,10 +3,7 @@ package com.ocbc.auctionservice.controllers
 import com.ocbc.auctionservice.entities.User
 import com.ocbc.auctionservice.services.UserService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -20,12 +17,18 @@ class UserController {
     }
 
     @GetMapping("/{id}")
-    fun getUser(id: Int): User? {
+    fun getUser(@PathVariable id: Int): User? {
         return userService.getUser(id)
     }
 
     @PostMapping
-    fun createUser(user: User): User {
+    fun createUser(@RequestBody user: User): User {
         return userService.createUser(user)
     }
+
+//    @PutMapping
+//    fun updateUser(){}
+//
+//    @DeleteMapping
+//    fun deleteUser(){}
 }
