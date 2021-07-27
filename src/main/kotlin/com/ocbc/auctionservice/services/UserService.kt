@@ -48,4 +48,12 @@ class UserService {
         users.add(user)
         return user
     }
+
+    fun updateUser(user: User): User {
+        return user
+    }
+
+    fun deleteUser(user: User): User {
+        return user
+    }
 }

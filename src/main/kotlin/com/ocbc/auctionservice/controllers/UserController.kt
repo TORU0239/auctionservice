@@ -3,6 +3,7 @@ package com.ocbc.auctionservice.controllers
 import com.ocbc.auctionservice.entities.User
 import com.ocbc.auctionservice.services.UserService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -22,13 +23,17 @@ class UserController {
     }
 
     @PostMapping
-    fun createUser(@RequestBody user: User): User {
-        return userService.createUser(user)
+    fun createUser(@RequestBody user: User): ResponseEntity<User> {
+        return ResponseEntity.ok(userService.createUser(user))
     }
 
-//    @PutMapping
-//    fun updateUser(){}
-//
-//    @DeleteMapping
-//    fun deleteUser(){}
+    @PutMapping
+    fun updateUser(@RequestBody user: User): ResponseEntity<User>{
+        return ResponseEntity.ok(userService.updateUser(user))
+    }
+
+    @DeleteMapping
+    fun deleteUser(@RequestBody user: User): ResponseEntity<User>{
+        return ResponseEntity.ok(userService.deleteUser(user))
+    }
 }
